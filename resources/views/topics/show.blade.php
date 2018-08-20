@@ -29,9 +29,9 @@
 </p> <label>Body</label>
 <p>
 	{{ $topic->body }}
-</p> <label>Uesr_id</label>
+</p> <label>user_id</label>
 <p>
-	{{ $topic->uesr_id }}
+	{{ $topic->user_id }}
 </p> <label>Category_id</label>
 <p>
 	{{ $topic->category_id }}

@@ -17,7 +17,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Title</th> <th>Body</th> <th>Uesr_id</th> <th>Category_id</th> <th>Reply_count</th> <th>View_count</th> <th>Last_reply_user_id</th> <th>Order</th> <th>Excerpt</th> <th>Slug</th>
+                                <th>Title</th> <th>Body</th> <th>user_id</th> <th>Category_id</th> <th>Reply_count</th> <th>View_count</th> <th>Last_reply_user_id</th> <th>Order</th> <th>Excerpt</th> <th>Slug</th>
                                 <th class="text-right">OPTIONS</th>
                             </tr>
                         </thead>
@@ -27,7 +27,7 @@
                                 <tr>
                                     <td class="text-center"><strong>{{$topic->id}}</strong></td>
 
-                                    <td>{{$topic->title}}</td> <td>{{$topic->body}}</td> <td>{{$topic->uesr_id}}</td> <td>{{$topic->category_id}}</td> <td>{{$topic->reply_count}}</td> <td>{{$topic->view_count}}</td> <td>{{$topic->last_reply_user_id}}</td> <td>{{$topic->order}}</td> <td>{{$topic->excerpt}}</td> <td>{{$topic->slug}}</td>
+                                    <td>{{$topic->title}}</td> <td>{{$topic->body}}</td> <td>{{$topic->user_id}}</td> <td>{{$topic->category_id}}</td> <td>{{$topic->reply_count}}</td> <td>{{$topic->view_count}}</td> <td>{{$topic->last_reply_user_id}}</td> <td>{{$topic->order}}</td> <td>{{$topic->excerpt}}</td> <td>{{$topic->slug}}</td>
                                     
                                     <td class="text-right">
                                         <a class="btn btn-xs btn-primary" href="{{ route('topics.show', $topic->id) }}">

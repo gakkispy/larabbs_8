@@ -39,8 +39,8 @@
                 	<textarea name="body" id="body-field" class="form-control" rows="3">{{ old('body', $topic->body ) }}</textarea>
                 </div> 
                 <div class="form-group">
-                    <label for="uesr_id-field">Uesr_id</label>
-                    <input class="form-control" type="text" name="uesr_id" id="uesr_id-field" value="{{ old('uesr_id', $topic->uesr_id ) }}" />
+                    <label for="user_id-field">user_id</label>
+                    <input class="form-control" type="text" name="user_id" id="user_id-field" value="{{ old('user_id', $topic->user_id ) }}" />
                 </div> 
                 <div class="form-group">
                     <label for="category_id-field">Category_id</label>
