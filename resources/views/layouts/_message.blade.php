@@ -5,10 +5,10 @@
     </div>
 @endif
 
-@if (Session::has('success'))
+@if (session('success'))
     <div class="alert alert-success">
         <button class="close" type="button" data-dismiss="alert" aria-hidden="true">×</button>
-        {{ Session::get('success') }}
+        {{ session('success') }}
     </div>
 @endif
 

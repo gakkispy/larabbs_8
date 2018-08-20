@@ -14,7 +14,7 @@
 
         <div class="panel-body">
 
-            <form action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8" method="post" class="form">
+            <form action="{{ route('users.update', $user->id) }}" accept-charset="UTF-8" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
 
@@ -31,6 +31,16 @@
                 <div class="form-group">
                     <label for="introduction-field" class="control-label">个人简介</label>
                     <textarea  class="form-control" name="introduction" id="introduction-field" rows="3" >{{ old('introduction', $user->introduction) }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatar-field" class="avatar-label">用户头像</label>
+                    <input type="file" name="avatar" id="avatar_field">
+
+                    @if ($user->avatar)
+                        <br>
+                        <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="200px;" class="thumbnail img-responsive">
+                    @endif
                 </div>
 
                 <div class="well well-sm">
