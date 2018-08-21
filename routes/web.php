@@ -28,6 +28,11 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-// User resouces
+// User resources
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
+// topic resources
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+// category resources
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
