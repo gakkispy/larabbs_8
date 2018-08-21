@@ -8,7 +8,7 @@ use Image;
 class ImageUploadHandler
 {
     //  只允许指定后缀名的图片文件上传
-    protected $allowed_ext = ["pnh", "jpg", "gif", "jpeg"];
+    protected $allowed_ext = ["png", "jpg", "gif", "jpeg"];
 
     public function save($file, $folder, $file_prefix, $max_width = false)
     {
