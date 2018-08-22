@@ -13,6 +13,8 @@
     @yield('styles')
 
     <title>@yield('title', 'LaravBBS') - Laravel 进阶教程</title>
+
+    <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
