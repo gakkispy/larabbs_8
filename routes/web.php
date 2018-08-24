@@ -43,3 +43,7 @@ Route::post('uopload_image', 'TopicsController@uploadImage')->name('topics.uploa
 
 // reply resources
 Route::resource('replies', 'RepliesController', ['only' => ['store','destroy']]);
+
+// topic replies notifacation
+
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
