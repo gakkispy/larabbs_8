@@ -21,7 +21,7 @@ return array(
      *
      * @type string
      */
-    'title' => env('APP_NAME', 'laravel'),
+    'title' => env('APP_NAME', 'Laravel'),
 
     /*
      * The path to your model config directory
@@ -68,6 +68,9 @@ return array(
             'categories',
             'topics',
             'replies',
+        ],
+        '站点管理' => [
+            'settings.site',
         ],
     ],
 

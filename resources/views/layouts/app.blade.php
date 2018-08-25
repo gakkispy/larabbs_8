@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('styles')
 
-    <title>@yield('title', 'LaravBBS') - Laravel 进阶教程</title>
-
-    <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
+    <title>@yield('title', 'LaraBBS') - {{ setting('site_name', 'Laravel 进阶教程') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', 'LaraBBS 爱好者社区。'))" />
+    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'LaraBBS,社区,论坛,开发者论坛'))" />
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
