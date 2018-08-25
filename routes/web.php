@@ -47,3 +47,6 @@ Route::resource('replies', 'RepliesController', ['only' => ['store','destroy']])
 // topic replies notifacation
 
 Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
+
+// 无权限跳转
+Route::get('permission-denied', 'PagesController@permissionDenied')->name('permissioin-denied');
