@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Topic;
+use App\Models\User;
 
 class CategoriesController extends Controller
 {
@@ -45,15 +46,18 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category, Request $request, Topic $topic)
+    public function show(Category $category, Request $request, Topic $topic, User $user)
     {
         // 读取分类 ID 关联的话题，20 条分页
         $topics = $topic->withOrder($request->order)
                         ->where('category_id', $category->id)
                         ->paginate(20);
         
+        // 活跃用户列表
+        $active_users = $user->getActiveUsers();
+
         // 传参变量 话题 和 分类 到模板
-        return view('topics.index', compact('topics', 'category'));
+        return view('topics.index', compact('topics', 'category', 'active_users'));
     }
 
     /**
