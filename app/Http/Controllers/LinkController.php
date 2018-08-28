@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Link;
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Topic;
-use App\Models\User;
 
-class CategoriesController extends Controller
+class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,33 +41,21 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category, Request $request, Topic $topic, User $user, Link $link)
+    public function show(Link $link)
     {
-        // 读取分类 ID 关联的话题，20 条分页
-        $topics = $topic->withOrder($request->order)
-                        ->where('category_id', $category->id)
-                        ->paginate(20);
-        
-        // 活跃用户列表
-        $active_users = $user->getActiveUsers();
-
-        // 资源链接
-        $links = $link->getAllCached();
-
-        // 传参变量 话题 和 分类 到模板
-        return view('topics.index', compact('topics', 'category', 'active_users', 'links'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Link $link)
     {
         //
     }
@@ -78,10 +64,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Link $link)
     {
         //
     }
@@ -89,10 +75,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Link $link)
     {
         //
     }
