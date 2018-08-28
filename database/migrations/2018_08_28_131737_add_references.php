@@ -38,10 +38,10 @@ class AddReferences extends Migration
     {
         Schema::table('topics', function (Blueprint $table) {
             // 移除外键约束
-            $table->dropForegin(['user_id']);
+            $table->dropForeign(['user_id']);
         });
 
-        Schema::talbe('replies', function (Blueprint $table) {
+        Schema::table('replies', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['topic_id']);
         });
