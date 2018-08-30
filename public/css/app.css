@@ -8426,39 +8426,52 @@ body {
 
 /* User profile page */
 
-.users-show-page .user-info .thumbnail {
+.users-show-page .user-info .thumbnail,
+.followers-show-page .user-info .thumbnail {
   margin-bottom: 0;
 }
 
-.users-show-page .nav-tabs {
+.users-show-page .nav-tabs,
+.followers-show-page .nav-tabs {
   margin-bottom: 20px;
 }
 
-.users-show-page .nav-tabs > li.active > a {
+.users-show-page .nav-tabs > li.active > a,
+.followers-show-page .nav-tabs > li.active > a {
   background-color: #fff;
 }
 
-.users-show-page .list-group .list-group-item {
+.users-show-page .list-group .list-group-item,
+.followers-show-page .list-group .list-group-item {
   border: none;
   margin-bottom: 0;
   border-bottom: 1px solid #efefef;
 }
 
-.users-show-page .list-group .list-group-item .meta {
+.users-show-page .list-group .list-group-item .meta,
+.followers-show-page .list-group .list-group-item .meta {
   color: #b3b3b3;
 }
 
-.users-show-page .pagination {
+.users-show-page .pagination,
+.followers-show-page .pagination {
   margin: 12px 0;
 }
 
-.users-show-page .meta {
+.users-show-page .meta,
+.followers-show-page .meta {
   font-size: 0.9em;
   color: #b3b3b3;
 }
 
-.users-show-page .reply-content {
+.users-show-page .reply-content,
+.followers-show-page .reply-content {
   margin: 6px 0;
+}
+
+.users-show-page .users.follow,
+.followers-show-page .users.follow {
+  padding: 0;
 }
 
 /* Topic Index Page */
@@ -9016,5 +9029,47 @@ body {
   color: #797878;
   line-height: 26px;
   font-size: 0.9em;
+}
+
+/* stats */
+
+.stats {
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0;
+}
+
+.stats a {
+  float: left;
+  padding: 0 10px;
+  text-align: center;
+  width: 33%;
+  border-left: 1px solid gainsboro;
+  color: gray;
+}
+
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+
+.stats a:hover {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.2em;
+}
+
+.stats strong:hover {
+  color: black !important;
+}
+
+#follow_form button {
+  margin: 0 auto;
+  display: block;
+  margin-top: 25px;
 }
 

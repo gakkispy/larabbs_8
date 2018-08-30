@@ -19,6 +19,8 @@ class User extends Authenticatable
 
     use Traits\LastActivedAtHelper;
 
+    use Traits\FollowerHelper;
+
     public function notify($instance)
     {
         // 如果要通知的人是当前用户，就不需要进行通知
@@ -91,4 +93,8 @@ class User extends Authenticatable
 
         $this->attributes['avatar'] = $path;
     }
+
+
+
+    
 }

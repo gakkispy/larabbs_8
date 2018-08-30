@@ -22,6 +22,7 @@
                                 <img src="{{ $topic->user->avatar }}" alt="{[ $topic->user->name }}" width="300px" height="300px" class="thumbnail img-responsive">
                             </a>
                         </div>
+                        @include('shared._stats', ['user' => $topic->user ])
                     </div>
                 </div>
             </div>

@@ -81,7 +81,7 @@ body {
 
 
 /* User profile page */
-.users-show-page {
+.users-show-page, .followers-show-page {
     .user-info  {
         .thumbnail {
             margin-bottom: 0;
@@ -118,6 +118,15 @@ body {
 
     .reply-content {
         margin: 6px 0;
+    }
+
+    
+
+    
+    
+
+    .users.follow {
+        padding: 0;
     }
 }
 
@@ -217,4 +226,42 @@ body {
             font-size: 0.9em;
         }
     }
+}
+
+/* stats */
+.stats {
+    overflow: hidden;
+    margin-top: 0;
+    padding: 0;
+    a {
+        float: left;
+        padding: 0 10px;
+        text-align: center;
+        width: 33%;
+        border-left: 1px solid gainsboro;
+        color: gray;
+        &:first-child {
+            padding-left: 0;
+            border: 0;
+        }
+        &:hover {
+            text-decoration: none;
+            color: #337ab7;
+        }
+    }
+
+    strong {
+        display: block;
+        font-size: 1.2em;
+        &:hover {
+            color: black !important;
+        }
+    }
+
+}
+
+#follow_form button {    
+    margin: 0 auto;
+    display: block;
+    margin-top: 25px;
 }

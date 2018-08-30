@@ -31,6 +31,13 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 // User resources
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
+// Follow system
+Route::get('/users/{user}/show_follow','UsersController@showFollow')->name('followers.show');
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
+Route::delete('/users/followers/{user}','FollowersController@destroy')->name('followers.destroy');
+
+
+
 // topic resources
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');

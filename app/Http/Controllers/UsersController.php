@@ -59,7 +59,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        return view('users.show_topics_replies', compact('user'));
     }
 
     /**
@@ -93,7 +93,7 @@ class UsersController extends Controller
             }
         }
         $user->update($data);
-        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
+        return redirect()->route('users.show_topics_replies', $user->id)->with('success', '个人资料更新成功！');
     }
 
     /**
@@ -105,5 +105,10 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showFollow(User $user)
+    {
+        return view('users.show_follow', compact('user'));
     }
 }
