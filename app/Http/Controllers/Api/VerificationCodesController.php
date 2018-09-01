@@ -27,8 +27,8 @@ class VerificationCodesController extends Controller
             } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableExcet4ption $exception) {
                 $message = $exception->getException('qcloud')->getMessage();
                 return $this->response->errorInternal($message ?? '短信发送异常');
-            }
-    
+            }            
+        }    
             $key = 'verificationCode_' . str_random(15);
             $expiredAt = now()->addMinutes(10);
     
@@ -39,7 +39,7 @@ class VerificationCodesController extends Controller
                 'key' => $key,
                 'expired_at' => $expiredAt->toDateTimeString(),
             ])->setStatusCode(201);
-        }
+        
         
     }
 }
