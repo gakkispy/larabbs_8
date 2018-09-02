@@ -1,0 +1,1 @@
+code=https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf9a1e2d7d3203a3b&redirect_uri=http://larabbs_8.test&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
