@@ -59,7 +59,8 @@ class AuthorizationsController extends Controller
                 break;
                 
         }
-        return $this->response->array(['token' => $user->id]);
+        $token = Auth::guard('api')->fromUser($user);
+        return $this->respondWithToken($token)->setStatusCode(201);
     }
 
     public function store(AuthorizationRequest $request)
