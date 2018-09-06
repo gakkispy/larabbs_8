@@ -59,6 +59,10 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        // 访问节流，例如 1 分钟内请求 10 此，api 中使用
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        // 接口语言设置
+        'change-locale' => \App\Http\Middleware\ChangeLocale::class,
+
     ];
 }
