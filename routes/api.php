@@ -110,7 +110,10 @@ $api->version('v1', [
                 ->name('api.user.notifications.index');
             // 通知统计
             $api->get('user/notifications/stats', 'NotificationsController@stats')
-                ->name('api/user.notification.stats');
+                ->name('api.user.notification.stats');
+            // 标记消息通知为已读
+            $api->patch('user/read/notifications', 'NotificationsController@read')
+                ->name('api.user.notifications.read');
         });
     });       
 });
