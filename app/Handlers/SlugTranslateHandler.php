@@ -4,6 +4,7 @@ namespace App\Handlers;
 
 use GuzzleHttp\Client;
 use Overtrue\Pinyin\Pinyin;
+use GuzzleHttp\Exception\RequestException;
 
 class SlugTranslateHandler
 {
@@ -39,9 +40,24 @@ class SlugTranslateHandler
         ]);
 
         // 发送 HTTP Get 请求
-        $response = $http->get($api.$query);
+        // if ($response = $http->get($api.$query)) {
+        //     $result = json_decode($response->getBody(), true);
+        // } else {
+        //     // http 请求错误
+        //     return $this->pinyin($text);
+        // }
+
+        try {
+            $response = $http->get($api.$query);
+        } catch (RequestException $e) {
+            if ($e->hasResponse()) {
+                echo $e->getResponse();
+            }
+            return $this->pinyin($text); 
+        }
 
         $result = json_decode($response->getBody(), true);
+        
 
 
 

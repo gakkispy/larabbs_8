@@ -53,7 +53,7 @@ class TopicApiTest extends TestCase
         $assertData = [
             'category_id' => 2,
             'user_id' => $this->user->id,
-            'ttile' => 'edit title',
+            'title' => 'edit title',
             'body' => clean('edit body', 'user_topic_body'),
         ];
 
